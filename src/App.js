@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { Provider } from "react-redux";
 import { BrowserRouter, Route, Redirect } from "react-router-dom";
-import { Header } from "shared/Header";
-import RentalListing from "components/rental/rental-listing/RentalListing";
-import RentalDetail from "components/rental/rental-detail/RentalDetail";
-import "App.css";
+import { Header } from "./shared/Header";
+import RentalListing from "./components/rental/rental-listing/RentalListing";
+import RentalDetail from "./components/rental/rental-detail/RentalDetail";
+import "./App.css";
 
 const store = require("./reducers").init();
 
