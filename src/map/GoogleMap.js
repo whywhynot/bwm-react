@@ -66,7 +66,7 @@ function withGeocode(WrappedComponent) {
 
       return new Promise((resolve, reject) => {
         geocoder.geocode({ address: location }, (result, status) => {
-          if (status === "ok") {
+          if (status === "OK") {
             const geometry = result[0].geometry.location;
             const coordinates = { lat: geometry.lat(), lng: geometry.lng() };
 
