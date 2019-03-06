@@ -90,7 +90,7 @@ export const checkAuthState = () => {
 export const login = userData => {
   return dispatch => {
     return axios
-      .post("/api/v1/users/auth", { ...userData })
+      .post("/api/v1/users/auth", userData)
       .then(res => res.data)
       .then(token => {
         authService.saveToken(token);
@@ -107,4 +107,11 @@ export const logout = () => {
   return {
     type: LOGOUT
   };
+};
+
+export const createBooking = booking => {
+  return axiosInstance
+    .post("/bookings", booking)
+    .then(res => res.data)
+    .catch(({ response }) => Promise.reject(response.data.errors));
 };
