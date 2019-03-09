@@ -25,6 +25,10 @@ class AuthService {
     return moment.unix(exp);
   }
 
+  getUserName() {
+    return this.decode(this.getToken()).username;
+  }
+
   isValid(token) {
     return moment().isBefore(this.getExpiration(token));
   }
